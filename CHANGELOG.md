@@ -1,14 +1,16 @@
 # CHANGELOG
 
+## 1.1.2 (2202.05.22)
+
 ## 1.1.1 (2022.05.22)
-
-### BUG FIX
-
-- Comment out deploy code since this is a template and it's not deployed
 
 ### ENHACEMENT
 
 - Added artifacts path to collect binaries
+
+### BUG FIX
+
+- Comment out deploy code since this is a template and it's not deployed
 
 ## 1.1.0 (2022.05.22)
 
