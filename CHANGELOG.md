@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.1.1 (2022.05.22)
+
+### BUG FIX
+
+- Comment out deploy code since this is a template and it's not deployed
+
 ## 1.1.0 (2022.05.22)
 
 ### ENHANCEMENT
