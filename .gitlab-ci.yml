@@ -1,6 +1,6 @@
 variables:
   GIT_CLEAN_FLAGS: -ffdx -e venv
-
+image: python
 stages:
   - build
   - test
@@ -10,9 +10,10 @@ stages:
 build:
   stage: build
   tags:
-    - python
+    - docker,python
   script:
-    - if [[ ! -d venv ]]; then python3 -m venv venv; fi
+    - python -c "import sys; print(sys.version)"
+    - if [[ ! -d venv ]]; then python -m venv venv; fi
     - source venv/bin/activate
     - pip install -U pip setuptools wheel
     - pip install .[dev]
@@ -21,7 +22,7 @@ build:
 test:
   stage: test
   tags:
-    - python
+    - docker,python
   script:
     - source venv/bin/activate
     - mypy -p python_template
@@ -33,7 +34,7 @@ test:
 deploy_to_pypy:
   stage: deploy
   tags:
-    - python
+    - docker,python
   script:
     - source venv/bin/activate
     - pip install twine
@@ -46,7 +47,7 @@ deploy_to_pypy:
 release_to_production:
   stage: production
   tags:
-    - python
+    - server
   script:
     - source /opt/python_template/bin/activate
     - pip install -U pip setuptools wheel
