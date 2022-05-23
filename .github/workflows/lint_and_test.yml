@@ -35,7 +35,7 @@ jobs:
       - name: Lint with mypy
         run: |
           mypy python_template
-      - name: Lit with pylint
+      - name: Lint with pylint
         run: |
           pylint python_template
       - name: Test with pytest
