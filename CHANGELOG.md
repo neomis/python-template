@@ -1,6 +1,12 @@
 # CHANGELOG
 
+## 1.1.2 (2202.05.22)
+
 ## 1.1.1 (2022.05.22)
+
+### ENHACEMENT
+
+- Added artifacts path to collect binaries
 
 ### BUG FIX
 
