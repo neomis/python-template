@@ -11,6 +11,7 @@ logger.remove(0)
 
 @click.command()
 @click.option('--loglevel', 'log_level', type=click.Choice(['CRITICAL', 'ERROR', 'WARNING', 'INFO', 'DEBUG'], case_sensitive=False), default='ERROR')
+@click.version_option()
 def cli(log_level) -> None:
     """Main Comand Line Interface"""
     from .main import main  # pylint: disable=import-outside-toplevel
