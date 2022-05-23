@@ -6,6 +6,10 @@
 
 - Comment out deploy code since this is a template and it's not deployed
 
+### ENHACEMENT
+
+- Added artifacts path to collect binaries
+
 ## 1.1.0 (2022.05.22)
 
 ### ENHANCEMENT
