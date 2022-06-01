@@ -1,12 +1,13 @@
-# python-template
+# Python Package Template
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/PyCQA/pylint)
 
 Basic Python template for creating pip packages.
 
 ## Installation
 
 ```bash
-python3 -m venv /opt/python_template
-source /opt/python_template/bin/activate
+python3 -m venv python_template
+source python_template/bin/activate
 pip install --upgrade pip setuptools wheel
 pip install python_template
 ```

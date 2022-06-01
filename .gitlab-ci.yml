@@ -19,14 +19,33 @@ build:
     - pip install .[dev]
   when: always
 
-test:
+mypy:
   stage: test
   tags:
     - docker,python
   script:
     - source venv/bin/activate
     - mypy -p python_template
-    - pylint python_template
+
+pylint:
+  stage: test
+  tags:
+    - docker,python
+  script:
+    - source venv/bin/activate
+    - pylint python_template --output pylint.txt
+    - score=$(sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' pylint.txt)
+    - echo "Pylint score was $score"
+    - anybadge --value=$score --file=public/pylint.svg pylint
+  except:
+    - tags
+
+test:
+  stage: test
+  tags:
+    - docker,python
+  script:
+    - source venv/bin/activate
     - pytest
   except:
     - tags
