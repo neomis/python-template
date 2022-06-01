@@ -19,14 +19,37 @@ build:
     - pip install .[dev]
   when: always
 
-test:
+mypy:
   stage: test
   tags:
     - docker,python
   script:
     - source venv/bin/activate
     - mypy -p python_template
-    - pylint python_template
+
+pylint:
+  stage: test
+  tags:
+    - docker,python
+  script:
+    - source venv/bin/activate
+    - mkdir ./pylint
+    - pylint python_template | tee ./pylint/pylint.log || pylint-exit $?
+    - PYLINT_SCORE=$(sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' ./pylint/pylint.log)
+    - anybadge --label=Pylint --file=pylint/pylint.svg --value=$PYLINT_SCORE 2=red 4=orange 8=yellow 10=green
+    - echo "Pylint score is $PYLINT_SCORE"
+  artifacts:
+    paths:
+      - ./pylint/
+  except:
+    - tags
+
+test:
+  stage: test
+  tags:
+    - docker,python
+  script:
+    - source venv/bin/activate
     - pytest
   except:
     - tags
@@ -46,6 +69,7 @@ deploy_to_pypy:
   rules:
     - if: '$CI_COMMIT_REF_NAME =~ /^v*\d+\.\d+\.\d+([abc]\d*)?$/' # PEP-440 compliant version (tags)
       when: on_success
+
 # release_to_production:
 #   stage: production
 #   tags:
