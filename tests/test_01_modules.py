@@ -14,5 +14,6 @@ def test_config():
 def test_main():
     """Test main package works."""
     from python_template.main import main  # pylint: disable=import-outside-toplevel, unused-import
-    main()
+    main(fun_flag=True)
+
     assert True
