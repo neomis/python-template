@@ -26,6 +26,8 @@ mypy:
   script:
     - source venv/bin/activate
     - mypy -p python_template
+  except:
+    - tags
 
 pylint:
   stage: test
