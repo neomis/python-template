@@ -42,6 +42,7 @@ setup(
             'autopep8',
             'mypy',
             'pylint',
+            'pylint-exit',
             'pytest',
             'pytest-cov',
             'twine']
