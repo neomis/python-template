@@ -1,12 +1,17 @@
 # CHANGELOG
 
-## 1.1.2 (2202.05.22)
+## 1.2.0 (2022.05.31)
+### ENHANCEMENT
+- Added command line option flag
+- Updated gitlab-ci to have more badge support
 
-## 1.1.1 (2022.05.22)
+## 1.1.2 (2202.05.22)
 
 ### ENHACEMENT
 
 - Added artifacts path to collect binaries
+
+## 1.1.1 (2022.05.22)
 
 ### BUG FIX
 
