@@ -38,6 +38,7 @@ setup(
     ],
     extras_require={
         'dev': [
+            'anybadge',
             'autopep8',
             'mypy',
             'pylint',
