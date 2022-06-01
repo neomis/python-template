@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.2.1 (2022.05.31)
+### BUG FIX
+- Added execpt tags to mypy test
 ## 1.2.0 (2022.05.31)
 ### ENHANCEMENT
 - Added command line option flag
