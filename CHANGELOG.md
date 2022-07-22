@@ -1,10 +1,22 @@
 # CHANGELOG
 
+## 1.2.2 (2022.07.22)
+
+### ENHANCEMENTS
+
+- Updated pytest reporting
+- Updated gitlab ci to collect more artifacts
+
 ## 1.2.1 (2022.05.31)
+
 ### BUG FIX
+
 - Added execpt tags to mypy test
+
 ## 1.2.0 (2022.05.31)
+
 ### ENHANCEMENT
+
 - Added command line option flag
 - Updated gitlab-ci to have more badge support
 
